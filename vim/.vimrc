@@ -9,6 +9,7 @@ set tabstop=4
 
 if has('gui_running')
     set guifont=Monospace\ 11
+    colorscheme martin_krischik
 endif
 
 filetype plugin on
@@ -41,3 +42,19 @@ endfunction
 map <F2> :echo strftime('%c')<CR>
 map <F3> :!acpi -b<CR>
 map <F4> :call b:QToggleListCharsShow()<CR>
+
+
+" reStructuredText
+"
+" TODO: refactor and handle possible errors
+function! g:RstHeadComplete()
+    let curLine = getline(".")
+    let numberOfRestChars = len(getline(line(".") - 1)) - len(curLine)
+    let completeChar = curLine[strlen(curLine) - 1]
+    " Build the rest string
+    let restString = ""
+    for i in range(numberOfRestChars)
+        let restString .= completeChar
+    endfor
+    call setline(line("."), curLine . restString)
+endfunction
