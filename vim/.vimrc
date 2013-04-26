@@ -29,6 +29,7 @@ autocmd BufRead,BufNewFile *.md set shiftwidth=4
 autocmd BufRead,BufNewFile *.js set tabstop=2
 autocmd BufRead,BufNewFile *.js set shiftwidth=2
 autocmd BufRead,BufNewFile *.js set foldmethod=syntax
+autocmd BufRead,BufNewFile *.txt set syntax=rst
 
 function! b:QToggleListCharsShow()
     if exists("b:c_set_list") == 0
@@ -46,15 +47,13 @@ map <F4> :call b:QToggleListCharsShow()<CR>
 
 " reStructuredText
 "
-" TODO: refactor and handle possible errors
 function! g:RstHeadComplete()
     let curLine = getline(".")
-    let numberOfRestChars = len(getline(line(".") - 1)) - len(curLine)
-    let completeChar = curLine[strlen(curLine) - 1]
-    " Build the rest string
-    let restString = ""
-    for i in range(numberOfRestChars)
-        let restString .= completeChar
-    endfor
-    call setline(line("."), curLine . restString)
+    let curLineNo = line(".")
+    if line(".") > 0 && strlen(curLine) > 0
+        let numberOfRestChars = strlen(getline(curLineNo - 1)) - strlen(curLine)
+        let completeChar = curLine[strlen(curLine) - 1]
+        let restString = repeat(completeChar, numberOfRestChars)
+        call setline(curLineNo, curLine . restString)
+    endif
 endfunction
