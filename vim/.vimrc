@@ -57,3 +57,5 @@ function! g:RstHeadComplete()
         call setline(curLineNo, curLine . restString)
     endif
 endfunction
+
+map <C-r>c :call g:RstHeadComplete()<CR>
