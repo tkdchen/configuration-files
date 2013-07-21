@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/chen/git/cantas/public/javascripts'
+let g:netrw_dirhist_2='/home/chen/git/cantas/public/javascripts/views'
+let g:netrw_dirhist_3='/home/chen/nginx/instance/conf'
+let g:netrw_dirhist_4='/home/chen/git/cantas'
+let g:netrw_dirhist_5='/home/chen/git/cantas/sockets'
+let g:netrw_dirhist_6='/home/chen/git/js/async'
+let g:netrw_dirhist_7='/home/chen/git/js/async/lib'
