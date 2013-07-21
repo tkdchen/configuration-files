@@ -4,5 +4,9 @@ Hi, welcome to my personal configuration files page. I store most of configurati
 
 # Deploy
 
+  ```
   $ make vim
   $ make git
+  ```
+
+Get help by issuing ``make help``
