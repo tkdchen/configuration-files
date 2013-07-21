@@ -1,3 +1,4 @@
+syn on
 set autoindent
 set expandtab
 set foldmethod=indent
