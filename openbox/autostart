@@ -18,3 +18,5 @@
 #
 
 xcompmgr -c &
+
+fbpanel &
