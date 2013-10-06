@@ -1,8 +1,19 @@
+[user]
+	email = qcxhome@gmail.com
+	name = Chenxiong Qi
+[merge]
+	tool = vimdiff
 [color]
-	ui = true
+	status = true
+	diff = true
 [alias]
-	brh = branch
 	st = status
-	co = checkout
 	cm = commit
 	br = branch
+	co = checkout
+    df = diff
+[sendemail]
+	smtpserverport = 465
+	smtpserver = smtp.gmail.com
+	smtpencryption = ssl
+	smtpuser = qcxhome@gmail.com
